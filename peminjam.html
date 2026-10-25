@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aplikasi Data Koleksi</title>
+    <link rel="stylesheet" href="aset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        .navbar {
+            background: #f3f3f3;
+        }
+        .form-header {
+            background: #f3f3f3;
+        }
+        .form-koleksi {
+            width: 100%;
+            margin-left: 0;
+        }
+        .table-responsive {
+            width: 100%;
+        }
+        .table {
+            width: 100%;
+            table-layout: fixed;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light border-bottom py-0">
+        <div class="container-fluid">
+            <a class="navbar-brand fw-bold" href="#">Kelola Komik&Novel</a>
+            <form class="d-flex mx-auto w-50" role="search">
+                <div class="position-relative w-100">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2"></i>
+                    <input class="form-control ps-5" type="search" placeholder="Cari Dashboard, Koleksi, Teman, Peminjaman, Laporan">
+                </div>
+            </form>
+            <div class="p-2">
+                <i class="bi bi-person-fill fs-2"></i>
+            </div>
+        </div>
+    </nav>
+    <div class="d-flex" style="height: calc(97vh - 45px);">
+        <!-- Sidebar -->
+        <aside class="bg-light border-end border-bottom border-dark d-flex flex-column flex-shrink-0" style="width: 220px;">
+            <nav class="nav flex-column">
+                <a href="dashboard.html" class="nav-link active text-dark border-bottom border-dark d-flex align-items-center gap-2 py-1 px-2">
+                    <i class="bi bi-house-door-fill"></i>
+                    <span>DASHBOARD</span>
+                </a>
+                <a href="koleksi.html" class="nav-link active text-dark border-bottom border-dark d-flex align-items-center gap-2 py-1 px-2">
+                    <i class="bi bi-bookmark-check"></i>
+                    <span>KOLEKSI</span>
+                </a>
+                <a href="peminjam.html" class="nav-link active text-dark border-bottom border-dark d-flex align-items-center gap-2 py-1 px-2">
+                    <i class="bi bi-people-fill"></i>
+                    <span>PEMINJAM</span>
+                </a>
+                <a href="peminjaman.html" class="nav-link text-dark border-bottom border-dark d-flex align-items-center gap-2 py-1 px-2">
+                    <i class="bi bi-arrow-left-right"></i>
+                    <span>PEMINJAMAN</span>
+                </a>
+                <a href="laporan.html" class="nav-link text-dark border-bottom border-dark d-flex align-items-center gap-2 py-1 px-2">
+                    <i class="bi bi-bar-chart-fill"></i>
+                    <span>LAPORAN</span>
+                </a>
+            </nav>
+            <a href="#" class="nav-link text-dark mt-auto border-top border-dark d-flex align-items-center justify-content-center gap-2 py-1">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>LOGOUT</span>
+            </a>
+        </aside>
+        <!-- Content -->
+        <div class="content-area p-4 m-4 flex-grow-1">
+        <!-- FORM PEMINJAM -->
+            <div class="form-koleksi mb-4 border border-dark">
+                <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">Form Peminjam
+                </div>
+                <div class="p-3">
+                    <form>
+                        <div class="row mb-2 align-items-center">
+                            <label class="col-md-2 col-form-label fw-semibold">Nama</label>
+                            <label class="col-md-1 col-form-label text-center">:</label>
+                            <div class="col-md-9">
+                                <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama">
+                            </div>
+                        </div>
+                        <div class="row mb-3 align-items-center">
+                            <label class="col-md-2 col-form-label fw-semibold">NO. HP</label>
+                            <label class="col-md-1 col-form-label text-center">:</label>
+                            <div class="col-md-9">
+                                <input type="tel" class="form-control form-control-sm" placeholder="Masukkan Nomor">
+                            </div>
+                        </div>
+                        <button type="button" class="btn btn-secondary btn-sm px-4 me-2">Simpan</button>
+                        <button type="reset" class="btn btn-light border border-secondary btn-sm px-4">Batal</button>
+                    </form>
+                </div>
+            </div>
+            <!-- TABEL KOLEKSI -->
+            <div class="table-responsive mt-2">
+                <table class="table table-bordered mb-0 text-center">
+                    <thead>
+                        <tr>
+                            <th style="width: 3%;">No</th>
+                            <th style="width: 15%;">Nama</th>
+                            <th style="width: 10%;">NO. HP</th>
+                            <th style="width: 8%;">Aksi</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1</td>
+                            <td>Bunga Citra</td>
+                            <td>088216745960</td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ardiansyah</td>
+                            <td>088216745960</td>
+                            <td>
+                                <button type="buttom" class="btn btn-secondary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>3</td>
+                            <td>Putri</td>
+                            <td>088216745960</td>
+                            <td>
+                                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
+                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="aset/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
