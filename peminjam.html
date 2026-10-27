@@ -24,6 +24,7 @@
             width: 100%;
             table-layout: fixed;
         }
+    
     </style>
 </head>
 <body>
@@ -79,23 +80,23 @@
                 <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">Form Peminjam
                 </div>
                 <div class="p-3">
-                    <form>
+                    <form id="formPeminjam">
                         <div class="row mb-2 align-items-center">
                             <label class="col-md-2 col-form-label fw-semibold">Nama</label>
                             <label class="col-md-1 col-form-label text-center">:</label>
                             <div class="col-md-9">
-                                <input type="text" class="form-control form-control-sm" placeholder="Masukkan Nama">
+                                <input type="text" id="nama" class="form-control form-control-sm" placeholder="Masukkan Nama" required>
                             </div>
                         </div>
                         <div class="row mb-3 align-items-center">
                             <label class="col-md-2 col-form-label fw-semibold">NO. HP</label>
                             <label class="col-md-1 col-form-label text-center">:</label>
                             <div class="col-md-9">
-                                <input type="tel" class="form-control form-control-sm" placeholder="Masukkan Nomor">
+                                <input type="tel" id="noHP" class="form-control form-control-sm" placeholder="Masukkan Nomor" required>
                             </div>
                         </div>
-                        <button type="button" class="btn btn-secondary btn-sm px-4 me-2">Simpan</button>
-                        <button type="reset" class="btn btn-light border border-secondary btn-sm px-4">Batal</button>
+                        <button type="submit" id="tombolSimpan" class="btn btn-secondary btn-sm px-4 me-2">Simpan</button>
+                        <button type="reset" id="tombolBatal" class="btn btn-light border border-secondary btn-sm px-4">Batal</button>
                     </form>
                 </div>
             </div>
@@ -110,39 +111,13 @@
                             <th style="width: 8%;">Aksi</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>Bunga Citra</td>
-                            <td>088216745960</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Ardiansyah</td>
-                            <td>088216745960</td>
-                            <td>
-                                <button type="buttom" class="btn btn-secondary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Putri</td>
-                            <td>088216745960</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
-                            </td>
-                        </tr>
+                    <tbody id="tabelPeminjam">
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <script src="aset/js/bootstrap.bundle.min.js"></script>
+    <script src="aset/css/js/bootstrap.bundle.min.js"></script>
+    <script src="aset/css/js/peminjam.js"></script>
 </body>
 </html>
