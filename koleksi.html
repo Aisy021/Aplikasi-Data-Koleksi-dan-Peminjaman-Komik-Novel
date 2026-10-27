@@ -88,35 +88,35 @@
                 <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">Form Koleksi
                 </div>
                 <div class="p-3">
-                    <form>
+                    <form id="formKoleksi">
                         <div class="row g-3 align-items-center mb-2">
                             <div class="col-lg-3 col-md-6">
                                 <label class="form-label">Judul Koleksi</label>
-                                <input type="text" class="form-control form-control-sm border-dark" placeholder="Masukkan Judul">
+                                <input type="text" id="judul" class="form-control form-control-sm border-dark" placeholder="Masukkan Judul" required>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <label class="form-label">Genre</label>
-                                <select class="form-select form-select-sm border-dark">
-                                    <option>Semua Genre</option>
-                                    <option>Komik</option>
-                                    <option>Novel</option>
+                                <select id="genre" class="form-select form-select-sm border-dark" required>
+                                    <option value="">Pilih Genre</option>
+                                    <option value="Komik">Komik</option>
+                                    <option value="Novel">Novel</option>
                                 </select>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <label class="form-label">Penulis</label>
-                                <input type="text" class="form-control form-control-sm border-dark" placeholder="Masukkan Penulis">
+                                <input type="text" id="penulis" class="form-control form-control-sm border-dark" placeholder="Masukkan Penulis" required>
                             </div>
                             <div class="col-lg-3 col-md-6">
                                 <label class="form-label">Status</label>
-                                <select class="form-select form-select-sm border-dark">
-                                    <option>Semua Status</option>
-                                    <option>Tersedia</option>
-                                    <option>Dipinjam</option>
+                                <select id="status" class="form-select form-select-sm border-dark" required>
+                                    <option>Pilih Status</option>
+                                    <option value="Tersedia">Tersedia</option>
+                                    <option value="Dipinjam">Dipinjam</option>
                                 </select>
                             </div>
                         </div>
                         <div class="text-center mt-2">
-                            <button type="button" class="btn btn-secondary w-50">Tambah Koleksi</button>
+                            <button type="submit" id="tombolTambah" class="btn btn-secondary w-50">Tambah Koleksi</button>
                         </div>
                     </form>
                 </div>
@@ -128,18 +128,18 @@
                         <span class="input-group-text bg-white border-dark">
                             <i class="bi bi-search"></i>
                         </span>
-                        <input type="text" class="form-control border-dark" placeholder="Cari judul...">
+                        <input type="text" id="cariJudul" class="form-control border-dark" placeholder="Cari judul...">
                     </div>
                 </div>
                 <div class="col-lg-3 col-md-4">
-                    <select class="form-select border-dark">
-                        <option>Semua Genre</option>
-                        <option>Komik</option>
-                        <option>Novel</option>
+                    <select id="filterGenre" class="form-select border-dark">
+                        <option value="">Semua Genre</option>
+                        <option value="Komik">Komik</option>
+                        <option value="Novel">Novel</option>
                     </select>
                 </div>
                 <div class="d-grid col-lg-4 col-md-5">
-                    <button type="button" class="btn btn-secondary btn-md">Cari</button>
+                    <button type="button" id="tombolCari" class="btn btn-secondary btn-md">Cari</button>
                 </div>
             </div>
             <!-- TABEL KOLEKSI -->
@@ -155,45 +155,13 @@
                             <th style="width: 15%;">Aksi</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        <tr>
-                            <td>1</td>
-                            <td>One Piece Vol. 1</td>
-                            <td>Komik</td>
-                            <td>Eiichiro Oda</td>
-                            <td>Tersedia</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>2</td>
-                            <td>Dilan 1990</td>
-                            <td>Novel</td>
-                            <td>Pidi Baiq</td>
-                            <td>Dipinjam</td>
-                            <td>
-                                <button type="buttom" class="btn btn-secondary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>3</td>
-                            <td>Laut Bercerita</td>
-                            <td>Novel</td>
-                            <td>Leila S. Chudori</td>
-                            <td>Tersedia</td>
-                            <td>
-                                <button type="button" class="btn btn-secondary btn-sm">Edit</button>
-                                <button type="button" class="btn btn-secondary btn-sm">Hapus</button>
-                            </td>
-                        </tr>
+                    <tbody id="tabelKoleksi">
                     </tbody>
                 </table>
             </div>
         </div>
     </div>
-    <script src="aset/js/bootstrap.bundle.min.js"></script>
+    <script src="aset/css/js/bootstrap.bundle.min.js"></script>
+    <script src="aset/css/js/koleksi.js"></script>
 </body>
 </html>
