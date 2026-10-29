@@ -13,16 +13,6 @@ let daftarPeminjam = [
         nama: "Bunga Citra",
         noHP: "088216745960"
     },
-    {
-        id: 2,
-        nama: "Ardiansyah",
-        noHP: "088216745960"
-    },
-    {
-        id: 3,
-        nama: "Putri",
-        noHP: "088216745960"
-    }
 ];
 
 let idBerikutnya = 4;
@@ -46,7 +36,7 @@ function tampilkanPeminjam() {
                     Edit
                 </button>
                 <button type="button"
-                    class="btn btn-secondary btn-sm tombol-hapus"
+                    class="btn btn-danger btn-sm tombol-hapus"
                     data-id="${peminjam.id}">
                     Hapus
                 </button>
