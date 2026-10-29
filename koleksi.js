@@ -22,20 +22,6 @@ let dataAwal = [
         penulis: "Eiichiro Oda",
         status: "Tersedia"
     },
-    {
-        id: 2,
-        judul: "Dilan 1990",
-        genre: "Novel",
-        penulis: "Pidi Baiq",
-        status: "Dipinjam"
-    },
-    {
-        id: 3,
-        judul: "Laut Bercerita",
-        genre: "Novel",
-        penulis: "Leila S. Chudori",
-        status: "Tersedia"
-    }
 ];
 
 let daftarKoleksi = JSON.parse(
@@ -92,7 +78,7 @@ function tampilkanKoleksi() {
                     Edit
                 </button>
                 <button type="button"
-                    class="btn btn-secondary btn-sm tombol-hapus"
+                    class="btn btn-danger btn-sm tombol-hapus"
                     data-id="${koleksi.id}">
                     Hapus
                 </button>
