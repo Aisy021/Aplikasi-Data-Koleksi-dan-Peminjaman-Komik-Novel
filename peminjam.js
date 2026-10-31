@@ -1,4 +1,3 @@
-
 const formPeminjam = document.getElementById("formPeminjam");
 const inputNama = document.getElementById("nama");
 const inputNoHP = document.getElementById("noHP");
@@ -7,16 +6,25 @@ const tombolSimpan = document.getElementById("tombolSimpan");
 const tombolBatal = document.getElementById("tombolBatal");
 
 // Data awal peminjam
-let daftarPeminjam = [
+let daftarPeminjam = JSON.parse(
+    localStorage.getItem("daftarPeminjam")
+) || [
     {
         id: 1,
         nama: "Bunga Citra",
         noHP: "088216745960"
-    },
+    }
 ];
 
-let idBerikutnya = 4;
+let idBerikutnya = daftarPeminjam.length > 0
+    ? Math.max(...daftarPeminjam.map(function(peminjam) {
+        return peminjam.id;
+    })) + 1
+    : 1;
 let idEdit = null;
+function simpanDataPeminjam() {
+    localStorage.setItem("daftarPeminjam", JSON.stringify(daftarPeminjam));
+}
 
 // Menampilkan data peminjam ke tabel
 function tampilkanPeminjam() {
@@ -91,8 +99,8 @@ formPeminjam.addEventListener("submit", function(event) {
     formPeminjam.reset();
     idEdit = null;
     tombolSimpan.textContent = "Simpan";
-
     tampilkanPeminjam();
+    simpanDataPeminjam();
 });
 
 // Tombol Edit dan Hapus
@@ -138,6 +146,7 @@ tabelPeminjam.addEventListener("click", function(event) {
                 tombolSimpan.textContent = "Simpan";
             }
 
+            simpanDataPeminjam();
             tampilkanPeminjam();
             alert("Data peminjam berhasil dihapus!");
         }
