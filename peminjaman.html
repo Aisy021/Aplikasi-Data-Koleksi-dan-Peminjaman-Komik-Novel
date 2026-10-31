@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Peminjaman Komik & Novel</title>
+    <link rel="stylesheet" href="aset/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        body {
+            margin: 0;
+            background: white;
+        }
+
+        .navbar {
+            background: #007bff;
+            height: 64px;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+        }
+
+        .sidebar {
+            position: fixed;
+            top: 64px;
+            left: 0;
+            bottom: 0;
+            width: 220px;
+            overflow-y: auto;
+            background: #f8f9fa;
+            border-right: 1px solid #212529;
+            display: flex;
+            flex-direction: column;
+            z-index: 999;
+        }
+
+        .sidebar .nav-link {
+            color: #212529;
+            border-bottom: 1px solid #212529;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 4px 8px;
+            text-decoration: none;
+        }
+
+        .logout {
+            margin-top: auto;
+            border-top: 1px solid #212529;
+            justify-content: center;
+        }
+
+        .isi-halaman {
+            margin-left: 220px;
+            padding: 32px;
+            padding-top: 28px;
+            min-height: calc(100vh - 45px);
+            margin-top: 45px;
+        }
+
+        .form-header {
+            background: #f3f3f3;
+        }
+
+        .table-responsive {
+            width: 100%;
+        }
+
+        .table {
+            min-width: 850px;
+        }
+
+        @media (max-width: 768px) {
+            .sidebar {
+                width: 160px;
+            }
+
+            .isi-halaman {
+                margin-left: 160px;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg border-bottom py-0">
+        <div class="container-fluid">
+            <span class="navbar-brand fw-bold text-white">
+                Kelola Komik&Novel
+            </span>
+
+            <form class="d-flex mx-auto w-50" role="search">
+                <div class="position-relative w-100">
+                    <i class="bi bi-search position-absolute top-50 start-0 translate-middle-y ms-2"></i>
+
+                    <input class="form-control ps-5" type="search"
+                        placeholder="Cari Dashboard, Koleksi, Teman, Peminjaman, Laporan">
+                </div>
+            </form>
+
+            <div class="p-2">
+                <i class="bi bi-person-fill fs-2 text-dark"></i>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <nav class="nav flex-column">
+
+            <a href="dashboard.html" class="nav-link">
+                <i class="bi bi-house-door-fill"></i>
+                <span>DASHBOARD</span>
+            </a>
+
+            <a href="koleksi.html" class="nav-link">
+                <i class="bi bi-bookmark-check"></i>
+                <span>KOLEKSI</span>
+            </a>
+
+            <a href="peminjam.html" class="nav-link">
+                <i class="bi bi-people-fill"></i>
+                <span>PEMINJAM</span>
+            </a>
+
+            <a href="peminjaman.html" class="nav-link active">
+                <i class="bi bi-arrow-left-right"></i>
+                <span>PEMINJAMAN</span>
+            </a>
+
+            <a href="laporan.html" class="nav-link">
+                <i class="bi bi-bar-chart-fill"></i>
+                <span>LAPORAN</span>
+            </a>
+
+        </nav>
+
+        <a href="login.html" class="nav-link logout"
+            onclick="sessionStorage.removeItem('sudahLogin')">
+            <i class="bi bi-box-arrow-right"></i>
+            <span>LOGOUT</span>
+        </a>
+    </aside>
+
+    <!-- Content -->
+    <div class="isi-halaman">
+
+        <h1 class="fs-3 fw-normal mb-4">
+            Peminjam dan Pengembalian
+        </h1>
+
+        <!-- FORM PEMINJAMAN -->
+        <div class="border border-dark mb-4">
+
+            <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">
+                Form Peminjaman
+            </div>
+
+            <div class="p-3">
+
+                <form id="formPeminjaman">
+
+                    <div class="row g-3 mb-3">
+
+                        <div class="col-md-6">
+                            <label for="namaTeman" class="form-label">
+                                Nama Teman
+                            </label>
+
+                            <select id="namaTeman" class="form-select" required>
+                                <option value="">Pilih Nama Teman</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="judulBuku" class="form-label">
+                                Judul Komik/Novel
+                            </label>
+
+                            <select id="judulBuku" class="form-select" required>
+                                <option value="">Pilih Koleksi</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="tanggalPinjam" class="form-label">
+                                Tanggal Pinjam
+                            </label>
+
+                            <input type="date" id="tanggalPinjam"
+                                class="form-control" required>
+                        </div>
+
+                        <div class="col-md-6">
+                            <label for="batasKembali" class="form-label">
+                                Batas Pengembalian
+                            </label>
+
+                            <input type="date" id="batasKembali"
+                                class="form-control" required>
+                        </div>
+
+                    </div>
+
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-primary px-4">
+                            Simpan Peminjaman
+                        </button>
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <!-- FORM PENGEMBALIAN -->
+        <div class="border border-dark mb-4">
+
+            <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">
+                Form Pengembalian
+            </div>
+
+            <div class="p-3">
+
+                <form id="formPengembalian">
+
+                    <div class="row g-3 align-items-end">
+
+                        <div class="col-md-6">
+                            <label for="pilihPeminjam" class="form-label">
+                                Peminjam
+                            </label>
+
+                            <select id="pilihPeminjam" class="form-select" required>
+                                <option value="">Pilih Peminjam</option>
+                            </select>
+                        </div>
+
+                        <div class="col-md-4">
+                            <label for="tanggalKembali" class="form-label">
+                                Tanggal Pengembalian
+                            </label>
+
+                            <input type="date" id="tanggalKembali"
+                                class="form-control" required>
+                        </div>
+
+                        <div class="col-md-2">
+                            <button type="submit" class="btn btn-primary w-100">
+                                Simpan
+                            </button>
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </div>
+        </div>
+
+        <!-- DAFTAR PEMINJAM -->
+        <div class="border border-dark">
+
+            <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">
+                Daftar Peminjam
+            </div>
+
+            <div class="table-responsive p-2">
+
+                <table class="table table-bordered text-center align-middle mb-0">
+
+                    <thead>
+                        <tr>
+                            <th>No</th>
+                            <th>Judul</th>
+                            <th>Peminjam</th>
+                            <th>Tanggal Pinjam</th>
+                            <th>Batas Kembali</th>
+                            <th>Status</th>
+                            <th>Aksi</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="daftarPeminjam">
+                    </tbody>
+
+                </table>
+
+            </div>
+        </div>
+
+    </div>
+
+    <script src="aset/js/bootstrap.bundle.min.js"></script>
+    <script src="aset/js/peminjaman.js"></script>
+
+</body>
+</html>
