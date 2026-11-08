@@ -1,3 +1,4 @@
+
 // Mengambil elemen HTML
 const formPeminjaman = document.getElementById("formPeminjaman");
 const namaTeman = document.getElementById("namaTeman");
