@@ -1,3 +1,4 @@
+
 // Mengambil elemen HTML
 const formFilter = document.getElementById("formFilter");
 const filterGenre = document.getElementById("filterGenre");
