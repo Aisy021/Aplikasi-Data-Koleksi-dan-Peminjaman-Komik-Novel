@@ -1,4 +1,3 @@
-
 const formKoleksi = document.getElementById("formKoleksi");
 const inputJudul = document.getElementById("judul");
 const inputGenre = document.getElementById("genre");
