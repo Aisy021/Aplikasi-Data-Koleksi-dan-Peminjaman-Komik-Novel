@@ -102,7 +102,7 @@ if (isset($_POST['tambah'])) {
                 </div>
             </form>
             <div class="p-2">
-                <i class="bi bi-person-fill fs-2"></i>
+                <i class="bi bi-person-fill fs-2 text-white"></i>
             </div>
         </div>
     </nav>
@@ -143,7 +143,7 @@ if (isset($_POST['tambah'])) {
                 <div class="form-header fw-bold px-3 py-2 border-bottom border-dark">Form Peminjam
                 </div>
                 <div class="p-3">
-                    <form method="POST" action="">
+                    <form method="POST" id="formPeminjam" action="">
                         <div class="row mb-2 align-items-center">
                             <label class="col-md-2 col-form-label fw-semibold">Nama</label>
                             <label class="col-md-1 col-form-label text-center">:</label>
@@ -155,7 +155,10 @@ if (isset($_POST['tambah'])) {
                             <label class="col-md-2 col-form-label fw-semibold">NO. HP</label>
                             <label class="col-md-1 col-form-label text-center">:</label>
                             <div class="col-md-9">
-                                <input type="tel" name="no_hp" id="noHP" class="form-control form-control-sm" placeholder="Masukkan Nomor" alue="<?= $editData ? htmlspecialchars($editData['no_hp']) : ''; ?>" required>
+                               <input type="text" name="no_hp" id="noHP" class="form-control form-control-sm" placeholder="Masukkan Nomor" value="<?= $editData ? htmlspecialchars($editData['no_hp']) : ''; ?>" required>
+                                <div class="invalid-feedback">
+                                    Harus diisi dengan angka.
+                                </div>
                             </div>
                         </div>
                         <?php if ($editData) { ?>
